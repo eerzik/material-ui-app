@@ -1,20 +1,12 @@
 import React from 'react';
-import { Typography, Container, Button, ButtonGroup } from '@mui/material';
-
+import {  Container,Button } from '@mui/material';
+import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
 const Create = () => {
     return (
         //Container sağdan soldan boşuklar oluştu
         <Container>
-            {/* //ButtonGroup içerisindeki butonlara da özellikleri geçer */}
-            {/* <ButtonGroup color='primary' variant='outlined' >
-            <Button  >Oluştur</Button>
-            <Button  >Oluştur</Button>
-            <Button  >Oluştur</Button>
-            </ButtonGroup> */}
-
-{/* //disableElevation gölgelendirme ortadan kalkıyor. */}
-
-            <Button variant='contained' color='primary' disableElevation onClick={()=>{console.log('Tıklandı')}} >Oluştur</Button>
+            <Button variant='outlined' startIcon={<AnnouncementOutlinedIcon/>} >Yeni Kayıt</Button>
+         <AnnouncementOutlinedIcon  fontSize='large' ></AnnouncementOutlinedIcon>
         </Container>
     );
 };
