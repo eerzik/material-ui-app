@@ -1,20 +1,20 @@
 import React from 'react';
-import {Typography,Container} from '@mui/material';
+import { Typography, Container, Button, ButtonGroup } from '@mui/material';
 
 const Create = () => {
     return (
         //Container sağdan soldan boşuklar oluştu
         <Container>
-            {/* //noWrap alt satıra geçirmiyor ... nokta ile gösteriyor. */}
-            {/* //gutterBottom margin bottom veriyor. */}
-            <Typography variant='subtitle2' gutterBottom  >
-                Ut veniam minim tempor dolore dolor consectetur.
-                Ex laboris ullamco aliquip aute adipisicing aute non deserunt
-                Lorem est et. Sint sunt officia laboris sunt dolore excepteur fugiat.
-                Labore in occaecat id consectetur enim sunt officia cupidatat.
-                Labore amet proident ipsum id laborum do et laboris aliquip fugiat est.
-                In officia reprehenderit ut sit dolor. Duis labore eu est culpa tempor sint dolore eiusmod voluptate ipsum.
-            </Typography>
+            {/* //ButtonGroup içerisindeki butonlara da özellikleri geçer */}
+            {/* <ButtonGroup color='primary' variant='outlined' >
+            <Button  >Oluştur</Button>
+            <Button  >Oluştur</Button>
+            <Button  >Oluştur</Button>
+            </ButtonGroup> */}
+
+{/* //disableElevation gölgelendirme ortadan kalkıyor. */}
+
+            <Button variant='contained' color='primary' disableElevation onClick={()=>{console.log('Tıklandı')}} >Oluştur</Button>
         </Container>
     );
 };
