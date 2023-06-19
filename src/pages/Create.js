@@ -1,15 +1,13 @@
 import React from 'react';
-import {  Container,Button, Typography } from '@mui/material';
-import AnnouncementOutlinedIcon from '@mui/icons-material/AnnouncementOutlined';
-const Create = () => {
-    return (
-        //Container sağdan soldan boşuklar oluştu
-        <Container>
-            <Button color="primary" variant='outlined' startIcon={<AnnouncementOutlinedIcon/>} >Yeni Kayıt</Button>
-         <AnnouncementOutlinedIcon color='secondary'  fontSize='large' ></AnnouncementOutlinedIcon>
-         <Typography color='secondary' > Yeni Kayıt </Typography>
-        </Container>
-    );
-};
+import { Container, TextField } from '@mui/material';
 
-export default Create;
+export default function Create() {
+    return (
+        <Container>
+            <form>
+            <TextField id="outlined-basic" label="Not Giriniz" color='primary' fullWidth required type='number' multiline maxRows={4} minRows={2}  variant="standard" />
+            </form>
+        </Container>
+    )
+}
+
