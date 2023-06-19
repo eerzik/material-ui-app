@@ -1,40 +1,41 @@
-import { Drawer, Typography,List,ListItem,ListItemIcon,ListItemText } from "@mui/material";
-
-import { AddCircleOutlineOutlined,SubjectOutlined } from "@mui/icons-material";
+import { Drawer, Typography, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { AddCircleOutlineOutlined, SubjectOutlined } from "@mui/icons-material";
+import { useNavigate,useLocation } from "react-router-dom";
 
 const Layout = ({ children }) => {
 
-    const drawWidth=240
-    const menuItems=[
+    const navigate = useNavigate();
+    const location=useLocation();
+    const menuItems = [
         {
-            text:'Notlar',
-            icon:<SubjectOutlined color="secondary" />,
-            path:'/'
+            text: 'Notlar',
+            icon: <SubjectOutlined color="secondary" />,
+            path: '/'
         },
         {
-            text:'Yeni Not',
-            icon:<AddCircleOutlineOutlined color="secondary" />,
-            path:'/create'
+            text: 'Yeni Not',
+            icon: <AddCircleOutlineOutlined color="secondary" />,
+            path: '/create'
         }
     ]
 
     return (
         <div>
             <div>app bar</div>
-            <Drawer  style={{with:{drawWidth}}} variant="permanent" anchor="left">
-                <div style={{with:{drawWidth}}}>
-                    <Typography variant="h5" style={{ fontSize:'25px'}} >
+            <Drawer  variant="permanent" anchor="left">
+                <div >
+                    <Typography variant="h5" style={{ fontSize: '25px' }} >
                         One Piece Notlar
                     </Typography>
                 </div>
                 <List>
-                    {menuItems.map((item)=>(
-                        <ListItem button key={item.text}  >
+                    {menuItems.map((item) => (
+                        <ListItem button key={item.text} onClick={()=>navigate(item.path)} >
                             <ListItemIcon>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.text} secondary={item.text} >  </ListItemText>
                         </ListItem>
                     ))}
-                   
+
                 </List>
             </Drawer>
 
