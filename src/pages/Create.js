@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Container, Button, TextField, RadioGroup, Radio, FormControlLabel, FormControl, FormLabel } from '@mui/material';
-
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Create() {
@@ -10,7 +10,7 @@ export default function Create() {
     const [titleError, settTitleError] = useState(false);
     const [detailsError, setDetailsError] = useState(false);
     const [category, setCategory] = useState('onepiece');
-
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         settTitleError(false)
@@ -23,7 +23,11 @@ export default function Create() {
         }
 
         if (title && details) {
-            console.log(title, details, category)
+            fetch('http://localhost:8000/notes', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ title, details, category })
+            }).then(() => navigate('/'))
         }
     }
     return (
