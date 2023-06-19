@@ -1,11 +1,11 @@
 import { DeleteOutline } from '@mui/icons-material';
 import { Card, CardHeader, CardContent, IconButton, Typography } from '@mui/material';
 
-const NoteCard = ({ note }) => {
+const NoteCard = ({ note,handleDelete }) => {
     return (
         <Card elevation={3}>
             <CardHeader action={
-                <IconButton>
+                <IconButton onClick={()=>{handleDelete(note.id)}} >
                     <DeleteOutline />
                 </IconButton>
             } title={note.title} subheader={note.category} />
